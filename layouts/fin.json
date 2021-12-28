@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Sprite",
+					"type": "Sprite3",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -15,7 +15,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 9,
+					"uid": 2,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
