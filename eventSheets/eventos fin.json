@@ -1,0 +1,59 @@
+{
+	"name": "Eventos FIn",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "ControlTáctil",
+					"sid": 963335475873780,
+					"parameters": {
+						"object": "Jugar"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 996383658046188,
+					"parameters": {
+						"layout": "Escena 1"
+					}
+				}
+			],
+			"sid": 537245480359278
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 571858091964475
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "MisPuntos",
+					"sid": 258138057656625,
+					"parameters": {
+						"text": "\"Tienes \"&Puntos&\" puntos\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Récord",
+					"sid": 258852128175459,
+					"parameters": {
+						"text": "\"Tu récord es \"&Récord&\" puntos\""
+					}
+				}
+			],
+			"sid": 428404185749804
+		}
+	],
+	"sid": 962928405260287
+}

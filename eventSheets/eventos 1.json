@@ -1,0 +1,386 @@
+{
+	"name": "Eventos 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Velocidad",
+			"type": "number",
+			"initialValue": "250",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 807263463904496
+		},
+		{
+			"eventType": "variable",
+			"name": "Tubo",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 421614520451272
+		},
+		{
+			"eventType": "variable",
+			"name": "Salto",
+			"type": "number",
+			"initialValue": "500",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 411619312016495
+		},
+		{
+			"eventType": "variable",
+			"name": "Puntos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 853749844650660
+		},
+		{
+			"eventType": "variable",
+			"name": "Récord",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 975768872726543
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 109751380300760
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Piso1",
+					"sid": 785466667435078,
+					"parameters": {
+						"x": "Piso1.X-Velocidad*dt"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Piso2",
+					"sid": 129244492393442,
+					"parameters": {
+						"x": "Piso2.X-Velocidad*dt"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Tubo1",
+					"sid": 354063530180235,
+					"parameters": {
+						"x": "Tubo1.X-Velocidad*dt"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Tubo2",
+					"sid": 402557052474526,
+					"parameters": {
+						"x": "Tubo2.X-Velocidad*dt"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Puntos",
+					"sid": 699598001031156,
+					"parameters": {
+						"text": "Puntos"
+					}
+				}
+			],
+			"sid": 184583510445155
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Piso1",
+					"sid": 764701233441496,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Piso1",
+					"sid": 183338814764494,
+					"parameters": {
+						"x": "0"
+					}
+				}
+			],
+			"sid": 512784085286993
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Piso2",
+					"sid": 387000213808408,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Piso2",
+					"sid": 334690002636565,
+					"parameters": {
+						"x": "0"
+					}
+				}
+			],
+			"sid": 266006938724069
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Tubo1",
+					"sid": 364545202406406,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-50"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Tubo1",
+					"sid": 582850410364172
+				}
+			],
+			"sid": 631820622457148
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Tubo2",
+					"sid": 494631375269553,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-50"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Tubo2",
+					"sid": 550671332224253
+				}
+			],
+			"sid": 928436423175905
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 617005552760963,
+					"parameters": {
+						"interval-seconds": "Tubo"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 287885954405286,
+					"parameters": {
+						"object-to-create": "Tubo1",
+						"layer": "1",
+						"x": "450",
+						"y": "random(-150,0)",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 577005388451939,
+					"parameters": {
+						"object-to-create": "Tubo2",
+						"layer": "1",
+						"x": "450",
+						"y": "Tubo1.Y+760",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 712022274760109
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "ControlTáctil",
+					"sid": 711878885363754
+				}
+			],
+			"actions": [
+				{
+					"id": "set-vector-y",
+					"objectClass": "Pájaro",
+					"sid": 947545116768991,
+					"behaviorType": "Plataforma",
+					"parameters": {
+						"vector-y": "-Salto"
+					}
+				}
+			],
+			"sid": 518761827697664
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Pájaro",
+					"sid": 262942764168858,
+					"parameters": {
+						"object": "Tubo1"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Pájaro",
+					"sid": 166397572827024,
+					"parameters": {
+						"object": "Tubo2"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Pájaro",
+					"sid": 493606644596062,
+					"parameters": {
+						"object": "Piso1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 555798969587881,
+					"parameters": {
+						"layout": "Fin"
+					}
+				}
+			],
+			"sid": 812107956756816,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Tubo1",
+					"sid": 101436560304779,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "Pájaro.X"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 644533138668489
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 501010938902023,
+					"parameters": {
+						"variable": "Puntos",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 958966655644891
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 351071888419685
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 351497876059449,
+					"parameters": {
+						"variable": "Puntos",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 595752608857051
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 824237072972939,
+					"parameters": {
+						"variable": "Puntos",
+						"comparison": 4,
+						"value": "Récord"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 218618087022112,
+					"parameters": {
+						"variable": "Récord",
+						"value": "Puntos"
+					}
+				}
+			],
+			"sid": 639349778235395
+		}
+	],
+	"sid": 740901676755623
+}

@@ -1,0 +1,95 @@
+{
+	"name": "Pájaro",
+	"plugin-id": "Sprite",
+	"sid": 444949748573797,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Plataforma",
+			"sid": 910892385530708
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 411,
+						"height": 165,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9649563,
+						"collisionPoly": {
+							"points": [
+								1,
+								0,
+								1,
+								0.5,
+								1,
+								0.9939393939393939,
+								0.5,
+								0.9939393939393939,
+								0.0024330900243308973,
+								0.9939393939393939,
+								0.0024330900243308973,
+								0.5,
+								0.0024330900243308973,
+								0,
+								0.5,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 408,
+						"height": 112,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7302171,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								0.9975490196078431,
+								0,
+								0.9975490196078431,
+								0.5,
+								0.9975490196078431,
+								0.9910714285714286,
+								0.5,
+								0.9910714285714286,
+								0,
+								0.9910714285714286,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 558211047248924,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
